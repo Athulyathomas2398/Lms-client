@@ -27,8 +27,8 @@ function Home() {
         </div>
     </div>
 
-    <Link to={'/login'} data-aos="fade-up" className='btn btn-primary text-center mt-5 mb-5'>Get Started</Link>
-
+    <Link to={'/login'}  className='btn btn-primary text-center mt-5 mb-5'>Get Started</Link>
+{/* data-aos="fade-down" */}
     
    </div>
    {/* <div className='footer'>
