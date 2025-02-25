@@ -11,7 +11,16 @@ function Courses() {
 
     const handleDelete = async (courseId) => {
         if (window.confirm("Are you sure you want to delete this course?")) {
-          const result = await deleteCourseAPI(courseId);
+            const token=sessionStorage.getItem('token')
+            if(token){
+              const reqHeader={
+                // "content-type":"application/json",
+                "authorization":`Bearer ${token}`
+              }
+              try{
+
+             
+          const result = await deleteCourseAPI(courseId,reqHeader);
           if (result.status ==200) {
             await fetchCourses()
             toast.success("Course deleted successfully");
@@ -19,7 +28,12 @@ function Courses() {
           } else {
             toast.error("Failed to delete course");
           }
+        }catch(err){
+            console.log(err);
+            
         }
+        }
+    }
       };
     
     return (

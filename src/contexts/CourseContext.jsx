@@ -6,8 +6,14 @@ function CourseContext({children}) {
     const [courses,setCourses]=useState([])
 
     const fetchCourses=async()=>{
+      const token=sessionStorage.getItem("token")
+    if(token){
+      const reqHeader={
+        "content-type":"application/json",
+      "authorization":`Bearer ${token}`
+      }
         try{
-            const result=await getAllCourseAPI()
+            const result=await getAllCourseAPI(reqHeader)
             if(result.status==200){
                 setCourses(result.data)
             }
@@ -18,6 +24,7 @@ function CourseContext({children}) {
             console.log(err);
             
         }
+      }
     }
 
 

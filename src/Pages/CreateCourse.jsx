@@ -56,10 +56,16 @@ useEffect(() => {
       //reqHeader
      // const token=sessionStorage.getItem("token")
      // if(token){
-        const reqHeader={
-          "content-type":{}
-          // "authorization":`Bearer ${token}`
-        }
+        // const reqHeader={
+        //   "content-type":{}
+        //   // "authorization":`Bearer ${token}`
+        // }
+        const token = sessionStorage.getItem("token")
+        if (token) {
+          const reqHeader = {
+            "content-type": "multipart/form-data",
+            "authorization": `Bearer ${token}`
+          }
 
         //api call
         try{
@@ -88,6 +94,7 @@ useEffect(() => {
           console.log(err);
           
         }
+      }
       //}
     }
     else{

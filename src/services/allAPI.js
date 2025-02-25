@@ -27,18 +27,18 @@ export const getCourseByIdAPI = async (courseId, reqHeader) => {
   };
 
 // Update course by ID
-export const updateCourseAPI = async (courseId, reqBody) => {
+export const updateCourseAPI = async (courseId, reqBody,reqHeader) => {
   return await commonAPI(
     "PUT",
     `${SERVER_URL}/updatecourse/${courseId}`,
-    reqBody,
-    { "Content-Type": "multipart/form-data" } // Important for FormData
+    reqBody,reqHeader
+    // { "Content-Type": "multipart/form-data" } // Important for FormData
   );
 };
   
   // Delete course by ID
-  export const deleteCourseAPI = async (id) => {
-    return await commonAPI('DELETE', `${SERVER_URL}/deletecourse/${id}`, '');
+  export const deleteCourseAPI = async (id,reqHeader) => {
+    return await commonAPI('DELETE', `${SERVER_URL}/deletecourse/${id}`,null,reqHeader);
   };
 
 // API call to create an order for Razorpay payment

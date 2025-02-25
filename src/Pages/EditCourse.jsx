@@ -53,9 +53,16 @@ const EditCourse = () => {
     if (course.thumbImage) formData.append("thumbImage", course.thumbImage);
     if (course.video) formData.append("video", course.video);
     if (course.previewVideo) formData.append("previewVideo", course.previewVideo);
+    
+    const token=sessionStorage.getItem("token")
+    if(token){
+      const reqHeader={
+        "content-type":"multipart/form-data",
+        "authorization":`Bearer ${token}`
+      }
 
     try {
-      const result = await updateCourseAPI(courseId, formData);
+      const result = await updateCourseAPI(courseId, formData,reqHeader);
 
       if (result.status === 200) {
         fetchCourses();
@@ -67,6 +74,7 @@ const EditCourse = () => {
     } catch (err) {
       console.error("Update Error:", err);
       toast.error("An error occurred while updating");
+    }
     }
   };
 
