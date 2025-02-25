@@ -1,0 +1,42 @@
+.student-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-left: 150px;
+  }
+  
+  .course-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .course-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-card h2 {
+    margin-bottom: 10px;
+  }
+  
+  .course-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .course-card button:hover {
+    background-color: #0056b3;
+  }
+  @media (max-width:460px){
+    .student-page{
+      margin-left: 10px;
+    }
+  }
+  

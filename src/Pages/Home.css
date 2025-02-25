@@ -1,0 +1,25 @@
+.home{
+    min-height: 525px;
+}
+#img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+.footer{
+    height: 50px;
+    background-color: bisque;
+}
+  @media (max-width: 460px) {
+    *{
+        overflow-x: hidden;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .col-lg-6 {
+        width: 100%;
+        padding: 10px;
+      }
+  }
