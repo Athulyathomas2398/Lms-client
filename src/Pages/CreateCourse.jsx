@@ -8,8 +8,6 @@ import { CourseContextApi } from "../contexts/CourseContext";
 const CreateCourse = () => {
   const{courses,setCourses,fetchCourses}=useContext(CourseContextApi)
   
-  
-  
   const navigate=useNavigate()
   const [addCourse, setAddCourse] = useState({
     title: "",

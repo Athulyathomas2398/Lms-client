@@ -66,7 +66,7 @@ function CourseIntroduction() {
       const { amount, id: order_id, currency } = result.data.order;
 
       const options = {
-        key: "rzp_test_NjwasSiiEWWpkG", // Replace with your Razorpay Key ID
+        key: "rzp_test_NjwasSiiEWWpkG", 
         amount,
         currency,
         name: "LMS Course Purchase",

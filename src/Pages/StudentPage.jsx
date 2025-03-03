@@ -14,7 +14,7 @@ import { CourseContextApi } from "../contexts/CourseContext";
 
 const StudentPage = ({ }) => {
  
-  const{courses,setCourses}=useContext(CourseContextApi)
+  const{courses,setCourses,fetchCourses}=useContext(CourseContextApi)
   const[user,setUser]=useState("")
 //   console.log(user);
 //  console.log("welcome",user);
@@ -25,7 +25,7 @@ const StudentPage = ({ }) => {
       else{
         setUser("")
       }
-     
+     fetchCourses()
     }, [])
    useEffect(() => {
       AOS.init({ duration: 1000 });
